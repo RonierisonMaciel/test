@@ -8,7 +8,7 @@ sudo apt install git -y  # Instala o Git para clonar o repositório
 
 # Fazer o clone do seu repositório
 cd /var/www/html
-sudo git clone https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git projeto # Substitua pelo seu repositório
+sudo git clone https://github.com/RonierisonMaciel/test.git projeto # Substitua pelo seu repositório
 
 # Configurar UFW para permitir tráfego HTTP e HTTPS
 sudo ufw allow 'Nginx HTTP'
@@ -30,9 +30,9 @@ server {
         index index.html;
     }
 
-    # Servir arquivos .txt dentro do caminho /index.html/
-    location ~ /index.html/(.*\.txt) {
-        alias /var/www/html/projeto/c/\$1;
+    # Servir arquivos estáticos como p1.txt dentro do caminho /static/
+    location /static/ {
+        alias /var/www/html/projeto/static/;
         autoindex on;
     }
 
